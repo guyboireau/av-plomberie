@@ -1,0 +1,209 @@
+---
+---
+<section id="contact" class="contact section">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Contactez-nous</h2>
+                <p>Besoin d'un devis ou d'une information ? Remplissez le formulaire ou contactez-nous directement par téléphone ou email.</p>
+                
+                <ul class="info-list">
+                    <li>
+                        <i class="ph-fill ph-phone-call"></i>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <a href="tel:0123456789">01 23 45 67 89</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="ph-fill ph-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:contact@entreprise.fr">contact@entreprise.fr</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="ph-fill ph-map-pin"></i>
+                        <div>
+                            <strong>Adresse</strong>
+                            <span>123 Rue de l'Exemple<br>75000 Ville</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-form-card">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full" id="submit-btn">
+                        Envoyer le message <i class="ph ph-paper-plane-tilt"></i>
+                    </button>
+                    <p id="form-status" class="status-msg"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const statusMsg = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (statusMsg) statusMsg.textContent = "Envoi en cours...";
+            if (submitBtn) submitBtn.setAttribute('disabled', 'true');
+
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+
+            try {
+                const res = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (res.ok) {
+                    if (statusMsg) {
+                        statusMsg.textContent = "Message envoyé avec succès !";
+                        statusMsg.className = "status-msg success";
+                    }
+                    form.reset();
+                } else {
+                    throw new Error('Erreur réseau');
+                }
+            } catch (error) {
+                if (statusMsg) {
+                    statusMsg.textContent = "Une erreur est survenue. Veuillez réessayer.";
+                    statusMsg.className = "status-msg error";
+                }
+            } finally {
+                if (submitBtn) submitBtn.removeAttribute('disabled');
+            }
+        });
+    }
+</script>
+
+<style>
+    .section {
+        padding: 6rem 0;
+    }
+
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: flex-start;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+    }
+
+    .info-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-list i {
+        font-size: 1.5rem;
+        color: var(--primary);
+        background: var(--primary-light);
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .info-list strong {
+        display: block;
+        color: var(--text-main);
+    }
+
+    .info-list a, .info-list span {
+        color: var(--text-muted);
+    }
+
+    .contact-form-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--border);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text-main);
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        font-family: inherit;
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        transition: var(--transition);
+    }
+
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .status-msg {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .status-msg.success { color: #10b981; }
+    .status-msg.error { color: #ef4444; }
+
+    @media (max-width: 768px) {
+        .contact-wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

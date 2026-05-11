@@ -1,0 +1,115 @@
+---
+const services = [
+    {
+        title: "Installation & Création",
+        description: "Nous installons tout ce qu'il vous faut avec une expertise et un savoir-faire reconnu dans la région.",
+        icon: "ph-wrench"
+    },
+    {
+        title: "Dépannage & Urgence",
+        description: "Un problème ? Nous intervenons rapidement pour trouver et réparer la panne de manière durable.",
+        icon: "ph-lightning"
+    },
+    {
+        title: "Rénovation",
+        description: "Confiez-nous la rénovation de votre intérieur ou extérieur, on s'occupe de tout de A à Z.",
+        icon: "ph-house"
+    },
+    {
+        title: "Entretien Régulier",
+        description: "Contrats d'entretien annuel pour garantir la pérennité de vos installations et votre tranquillité d'esprit.",
+        icon: "ph-shield-check"
+    }
+];
+---
+
+<section id="services" class="services section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nos Prestations</h2>
+            <p>Découvrez l'ensemble de nos services pour répondre à vos besoins.</p>
+        </div>
+        
+        <div class="services-grid">
+            {services.map(service => (
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class={`ph ${service.icon}`}></i>
+                    </div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .section {
+        padding: 6rem 0;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-header p {
+        font-size: 1.125rem;
+        color: var(--text-muted);
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-card {
+        padding: 2.5rem 2rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: white;
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary-light);
+    }
+
+    .icon-box {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1.5rem;
+        background-color: var(--primary-light);
+        color: var(--primary);
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        transition: var(--transition);
+    }
+
+    .service-card:hover .icon-box {
+        background-color: var(--primary);
+        color: white;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: var(--text-muted);
+    }
+</style>

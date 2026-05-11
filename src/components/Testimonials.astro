@@ -1,0 +1,107 @@
+---
+const testimonials = [
+    {
+        name: "Jean Dupont",
+        role: "Particulier",
+        content: "Intervention très rapide et travail soigné. Je recommande les yeux fermés pour le professionnalisme.",
+        rating: 5
+    },
+    {
+        name: "Marie Martin",
+        role: "Gérante de boutique",
+        content: "Nous faisons appel à eux pour l'entretien de nos locaux depuis 2 ans, toujours impeccable.",
+        rating: 5
+    },
+    {
+        name: "Pierre Durand",
+        role: "Copropriété",
+        content: "Devis clair, prix respecté et chantier rendu très propre. Une entreprise sérieuse.",
+        rating: 4
+    }
+];
+---
+
+<section id="temoignages" class="testimonials section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Ils nous font confiance</h2>
+            <p>La satisfaction de nos clients est notre meilleure publicité.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            {testimonials.map(t => (
+                <div class="testimonial-card">
+                    <div class="stars">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                            <i class={`ph-fill ph-star ${i < t.rating ? 'active' : ''}`}></i>
+                        ))}
+                    </div>
+                    <p class="content">"{t.content}"</p>
+                    <div class="author">
+                        <strong>{t.name}</strong>
+                        <span>{t.role}</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .section {
+        padding: 6rem 0;
+        background-color: var(--secondary);
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .testimonial-card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+    }
+
+    .stars {
+        display: flex;
+        gap: 0.25rem;
+        margin-bottom: 1rem;
+        color: #e2e8f0;
+    }
+
+    .stars i.active {
+        color: #fbbf24; /* amber 400 */
+    }
+
+    .content {
+        font-size: 1.125rem;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        color: var(--text-main);
+    }
+
+    .author strong {
+        display: block;
+        color: var(--text-main);
+    }
+
+    .author span {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+    }
+</style>

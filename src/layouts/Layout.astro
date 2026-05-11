@@ -1,0 +1,113 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<script src="https://unpkg.com/@phosphor-icons/web"></script>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary: #0ea5e9; /* Sky 500 */
+		--primary-dark: #0284c7; /* Sky 600 */
+		--primary-light: #e0f2fe; /* Sky 100 */
+		--secondary: #f8fafc; /* Slate 50 */
+		--text-main: #0f172a; /* Slate 900 */
+		--text-muted: #64748b; /* Slate 500 */
+		--bg-main: #ffffff;
+		--border: #e2e8f0; /* Slate 200 */
+		--radius: 0.5rem;
+		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		--transition: all 0.3s ease;
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: 'Outfit', sans-serif;
+		color: var(--text-main);
+		background-color: var(--bg-main);
+		line-height: 1.6;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		transition: var(--transition);
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.container {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		border-radius: 9999px;
+		font-weight: 600;
+		cursor: pointer;
+		border: none;
+		transition: var(--transition);
+	}
+
+	.btn-primary {
+		background-color: var(--primary);
+		color: white;
+	}
+
+	.btn-primary:hover {
+		background-color: var(--primary-dark);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.btn-secondary {
+		background-color: white;
+		color: var(--text-main);
+	}
+
+	.btn-secondary:hover {
+		background-color: var(--secondary);
+		transform: translateY(-2px);
+	}
+</style>

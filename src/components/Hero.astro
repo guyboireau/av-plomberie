@@ -1,0 +1,119 @@
+---
+---
+<section class="hero">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <span class="badge">Professionnel & Rapide</span>
+            <h1>Votre expert de confiance pour <span>tous vos projets</span></h1>
+            <p>Une courte description pour mettre en avant votre proposition de valeur, votre expérience et pourquoi vos clients vous adorent.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">
+                    Obtenir un devis gratuit <i class="ph ph-arrow-right"></i>
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    Nos services
+                </a>
+            </div>
+            <div class="hero-features">
+                <div class="feature"><i class="ph-fill ph-check-circle"></i> Intervention 48h</div>
+                <div class="feature"><i class="ph-fill ph-check-circle"></i> Devis Gratuit</div>
+                <div class="feature"><i class="ph-fill ph-check-circle"></i> Qualité Garantie</div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-bg"></div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        padding: 10rem 0 6rem;
+        background-color: #0f172a;
+        color: white;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        opacity: 0.2;
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .hero-container {
+        position: relative;
+        z-index: 10;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    h1 span {
+        color: var(--primary);
+    }
+
+    p {
+        font-size: 1.25rem;
+        color: #cbd5e1;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .hero-actions .btn {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+    }
+
+    .hero-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+        color: #cbd5e1;
+    }
+
+    .feature i {
+        color: var(--primary);
+        font-size: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+        h1 { font-size: 2.5rem; }
+        .hero-actions { flex-direction: column; }
+        .hero-bg { width: 100%; opacity: 0.1; clip-path: none; }
+    }
+</style>
