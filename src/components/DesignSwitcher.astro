@@ -1,5 +1,5 @@
 ---
-// DesignSwitcher — Outil de démo pour basculer entre les variantes A, B, C
+// DesignSwitcher — Outil de démo pour basculer entre les variantes A–G
 ---
 
 <div class="ds-container" id="design-switcher">
@@ -11,19 +11,47 @@
   </button>
 
   <div class="ds-panel">
-    <p class="ds-title">Variante Globale</p>
-    <div class="ds-grid">
+    <p class="ds-title">Existants</p>
+    <div class="ds-grid-3">
       <button class="ds-btn active" data-variant="A">
+        <span class="ds-swatch ds-swatch-a"></span>
         <span class="ds-btn-mark">A</span>
         <span class="ds-btn-label">Classique</span>
       </button>
       <button class="ds-btn" data-variant="B">
+        <span class="ds-swatch ds-swatch-b"></span>
         <span class="ds-btn-mark">B</span>
         <span class="ds-btn-label">Clean</span>
       </button>
       <button class="ds-btn" data-variant="C">
+        <span class="ds-swatch ds-swatch-c"></span>
         <span class="ds-btn-mark">C</span>
         <span class="ds-btn-label">Édito</span>
+      </button>
+    </div>
+
+    <div class="ds-sep"></div>
+    <p class="ds-title">Wireframe</p>
+    <div class="ds-grid-2">
+      <button class="ds-btn ds-btn-d" data-variant="D">
+        <span class="ds-swatch ds-swatch-d"></span>
+        <span class="ds-btn-mark">D</span>
+        <span class="ds-btn-label">Forge</span>
+      </button>
+      <button class="ds-btn ds-btn-e" data-variant="E">
+        <span class="ds-swatch ds-swatch-e"></span>
+        <span class="ds-btn-mark">E</span>
+        <span class="ds-btn-label">Le Salon</span>
+      </button>
+      <button class="ds-btn ds-btn-f" data-variant="F">
+        <span class="ds-swatch ds-swatch-f"></span>
+        <span class="ds-btn-mark">F</span>
+        <span class="ds-btn-label">Stade</span>
+      </button>
+      <button class="ds-btn ds-btn-g" data-variant="G">
+        <span class="ds-swatch ds-swatch-g"></span>
+        <span class="ds-btn-mark">G</span>
+        <span class="ds-btn-label">Verveine</span>
       </button>
     </div>
 
@@ -37,6 +65,7 @@
 </div>
 
 <script>
+  const ALL_VARIANTS = ['a','b','c','d','e','f','g'];
   const switcher = document.getElementById('design-switcher');
   const toggle = switcher?.querySelector('.ds-toggle');
   const btns = switcher?.querySelectorAll('.ds-btn');
@@ -58,10 +87,9 @@
       btn.classList.add('active');
 
       // Update Body Class
-      document.body.classList.remove('v-a', 'v-b', 'v-c');
+      document.body.classList.remove(...ALL_VARIANTS.map(v => `v-${v}`));
       document.body.classList.add(`v-${variant.toLowerCase()}`);
-      
-      // Save to localStorage for demo persistence
+
       localStorage.setItem('demo-variant', variant);
     });
   });
@@ -74,11 +102,12 @@
 
   // Load Initial State
   const savedVariant = localStorage.getItem('demo-variant') || 'A';
-  const savedSketchy = localStorage.getItem('demo-sketchy') !== 'false'; // default true
+  const savedSketchy = localStorage.getItem('demo-sketchy') !== 'false';
 
+  document.body.classList.remove(...ALL_VARIANTS.map(v => `v-${v}`));
   document.body.classList.add(`v-${savedVariant.toLowerCase()}`);
   document.body.classList.toggle('is-sketchy', savedSketchy);
-  
+
   if (sketchyToggle) sketchyToggle.checked = savedSketchy;
   btns?.forEach(btn => {
     if (btn.getAttribute('data-variant') === savedVariant) {
@@ -119,7 +148,7 @@
     position: absolute;
     bottom: calc(100% + 12px);
     right: 0;
-    width: 240px;
+    width: 260px;
     background: #fff;
     border: 1px solid #e5e7eb;
     border-radius: 16px;
@@ -137,27 +166,33 @@
   }
 
   .ds-title {
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.07em;
     color: #9ca3af;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-weight: 700;
   }
 
-  .ds-grid {
+  .ds-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: 7px;
+    margin-bottom: 4px;
+  }
+  .ds-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+    margin-bottom: 4px;
   }
 
   .ds-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    padding: 10px 4px;
+    gap: 5px;
+    padding: 8px 4px;
     background: #f9fafb;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
@@ -165,25 +200,42 @@
     transition: all 0.15s;
   }
   .ds-btn:hover { background: #f3f4f6; }
-  .ds-btn.active {
-    background: #f6e7d4;
-    border-color: #b8763d;
-    color: #b8763d;
+  .ds-btn.active { border-color: #374151; background: #f3f4f6; }
+
+  /* Active colors per variant */
+  .ds-btn-d.active { background: #ecdcbe; border-color: #241c12; color: #241c12; }
+  .ds-btn-e.active { background: #f4ede0; border-color: #b04324; color: #b04324; }
+  .ds-btn-f.active { background: #dde6ff; border-color: #3a63ff; color: #3a63ff; }
+  .ds-btn-g.active { background: #cfd6c5; border-color: #3e4a3a; color: #3e4a3a; }
+
+  /* Color swatches */
+  .ds-swatch {
+    width: 24px; height: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.08);
+    flex-shrink: 0;
   }
+  .ds-swatch-a { background: linear-gradient(90deg, #b8763d 50%, #1a1916 50%); }
+  .ds-swatch-b { background: linear-gradient(90deg, #f5f6f8 50%, #0a0e1a 50%); }
+  .ds-swatch-c { background: linear-gradient(90deg, #f8f5ec 50%, #2c3e50 50%); }
+  .ds-swatch-d { background: linear-gradient(90deg, #ecdcbe 50%, #241c12 50%); }
+  .ds-swatch-e { background: linear-gradient(90deg, #f4ede0 50%, #b04324 50%); }
+  .ds-swatch-f { background: linear-gradient(90deg, #fafbfc 50%, #3a63ff 50%); }
+  .ds-swatch-g { background: linear-gradient(90deg, #f4f1e8 50%, #3e4a3a 50%); }
 
   .ds-btn-mark {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 800;
   }
   .ds-btn-label {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 500;
   }
 
   .ds-sep {
     height: 1px;
     background: #e5e7eb;
-    margin: 16px 0;
+    margin: 14px 0 12px;
   }
 
   .ds-row {
@@ -198,7 +250,6 @@
     color: #374151;
   }
 
-  /* Checkbox switch style */
   .ds-checkbox {
     width: 36px;
     height: 20px;
