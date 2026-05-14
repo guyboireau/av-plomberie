@@ -96,6 +96,9 @@ const contactHref = nav.find(n => n.label === 'Contact')?.href || '#contact';
       <span class="hdr-e-lang">FR · EN</span>
       <a href={contactHref} class="hdr-e-btn">Réserver</a>
     </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -119,6 +122,9 @@ const contactHref = nav.find(n => n.label === 'Contact')?.href || '#contact';
       </span>
       <a href={contactHref} class="hdr-f-btn">Demander une démo →</a>
     </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -133,9 +139,12 @@ const contactHref = nav.find(n => n.label === 'Contact')?.href || '#contact';
       {nav.map(l => <a href={l.href} class="hdr-g-link">{l.label}</a>)}
     </nav>
     <a href={contactHref} class="hdr-g-btn">Prendre rendez-vous</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
- 
+
 {/* ── Variante H : Artisan — Style ABPM Richard ─────────────────────────── */}
 <header class="hdr-h v-only-h" id="main-header-h">
   <div class="hdr-h-inner">
@@ -148,6 +157,9 @@ const contactHref = nav.find(n => n.label === 'Contact')?.href || '#contact';
     <a href={contactHref} class="hdr-h-cta">
       Contactez-nous <i class="ph ph-arrow-right"></i>
     </a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -165,11 +177,14 @@ const contactHref = nav.find(n => n.label === 'Contact')?.href || '#contact';
       <span class="hdr-d-open">ATELIER OUVERT · LUN–VEN</span>
       <a href={contactHref} class="hdr-d-btn">Devis →</a>
     </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
 {/* ── Mobile menu (partagé A + B) ─────────────────────────────────────── */}
-<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu mobile">
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu mobile">
   <nav>
     {nav.map(l => <a href={l.href} class="mobile-link">{l.label}</a>)}
   </nav>
@@ -329,6 +344,7 @@ if (menuTrigger && overlayNav) {
 @media (max-width: 900px) {
   .nav-desktop, .hdr-actions-a, .hdr-left .hdr-sep, .hdr-left .nav-b, .hdr-right { display: none; }
   .burger { display: flex; }
+  .hdr-inner { justify-content: space-between; }
 }
 
 /* ─── Variante E : Le Salon ───────────────────────────────────────────── */
@@ -446,9 +462,12 @@ if (menuTrigger && overlayNav) {
 }
 .hdr-g-btn:hover { background: #2a3427; }
 @media (max-width: 900px) {
-  .hdr-e-nav, .hdr-e-lang { display: none; }
-  .hdr-f-nav, .hdr-f-dispo { display: none; }
-  .hdr-g-nav { display: none; }
+  .hdr-e-nav, .hdr-e-lang, .hdr-e-actions { display: none; }
+  .hdr-e-inner { padding: 0 24px; justify-content: space-between; }
+  .hdr-f-nav, .hdr-f-dispo, .hdr-f-right { display: none; }
+  .hdr-g-nav, .hdr-g-btn { display: none; }
+  .hdr-g { padding: 12px 16px; }
+  .hdr-g-pill { border-radius: 16px; justify-content: space-between; }
 }
 
 /* ─── Variante D : Forge ───────────────────────────────────────────────── */
@@ -498,7 +517,8 @@ if (menuTrigger && overlayNav) {
 }
 .hdr-d-btn:hover { background: #c08c3c; border-color: #241c12; color: #241c12; }
 @media (max-width: 900px) {
-  .hdr-d-nav, .hdr-d-open { display: none; }
+  .hdr-d-nav, .hdr-d-open, .hdr-d-btn { display: none; }
+  .hdr-d-inner { padding: 0 24px; justify-content: space-between; }
 }
  
 /* ─── Variante H : Artisan — Style ABPM Richard ─────────────────────────── */
@@ -537,7 +557,7 @@ if (menuTrigger && overlayNav) {
 .hdr-h-cta:hover {
   background: #0284c7; transform: translateY(-2px);
 }
-@media (max-width: 768px) {
-  .hdr-h-nav { display: none; }
+@media (max-width: 900px) {
+  .hdr-h-nav, .hdr-h-cta { display: none; }
 }
 </style>
