@@ -339,7 +339,7 @@ export const siteConfig = {
 // ─── Re-exports nommés (compat avec les composants existants) ──────────────
 export type Variant = 'A' | 'B' | 'C';
 
-export const { business, branding, seo, design, features, pages } = siteConfig;
+export const { business, branding, seo, design, features, pages, nav } = siteConfig;
 export const variants  = siteConfig.design.variants;
 export const hero         = siteConfig.content.hero;
 export const services     = siteConfig.content.services;
