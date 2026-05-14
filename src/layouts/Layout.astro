@@ -50,11 +50,11 @@ const tokens = {
     {seo.ogImage && <meta property="og:image" content={`${seo.siteUrl}${seo.ogImage}`} />}
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Polices : Geist (heading/body) + variante si différent -->
+    <!-- Polices : Geist (heading/body) + Kalam (handwritten) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href={`https://fonts.googleapis.com/css2?family=${encodeURIComponent(branding.fontHeading)}:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap`}
+      href={`https://fonts.googleapis.com/css2?family=${encodeURIComponent(branding.fontHeading)}:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Kalam:wght@400;700&display=swap`}
       rel="stylesheet"
     />
 
@@ -86,7 +86,21 @@ const tokens = {
       </script>
     )}
   </head>
-  <body>
+  <body class={design.isSketchy ? 'sketchy' : ''}>
+    <!-- Hidden SVG filters for sketchy mode -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <filter id="rough" x="-2%" y="-2%" width="104%" height="104%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="3" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.6"/>
+        </filter>
+        <filter id="rough-strong" x="-3%" y="-3%" width="106%" height="106%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="7" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.4"/>
+        </filter>
+      </defs>
+    </svg>
+
     <slot />
   </body>
 </html>
@@ -99,6 +113,7 @@ const tokens = {
   fontHeading: branding.fontHeading,
   fontBody:    branding.fontBody,
   fontMono:    branding.fontMono,
+  fontHand:    'Kalam',
   bg:          tokens.bg,
   bgCard:      tokens.bgCard,
   paper:       tokens.paper,
@@ -255,6 +270,12 @@ p { margin: 0; }
 .text-muted  { color: var(--inkSoft); }
 .text-faint  { color: var(--inkFaint); }
 .text-mono   { font-family: var(--mono); }
+.hand-on     { font-family: var(--fontHand), cursive; }
+
+/* ─── Sketchy Mode ───────────────────────────────────────────────────────── */
+.sketchy * { filter: url(#rough); }
+.sketchy .rough-strong { filter: url(#rough-strong); }
+.sketchy .hand-on, .sketchy h1, .sketchy h2, .sketchy h3 { font-family: var(--fontHand), cursive; }
 
 /* ─── Image placeholder (avant la vraie photo) ───────────────────────────── */
 .img-placeholder {

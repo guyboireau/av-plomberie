@@ -84,6 +84,7 @@ export const siteConfig = {
   // ── 4. DESIGN VARIANTS ─────────────────────────────────────────────────────
   // 'A' = Safe / Classique  |  'B' = Clean / Vercel  |  'C' = Audacieux
   design: {
+    isSketchy: true,      // true = style "main levée" (filtres SVG)
     variants: {
       header:       'B',  // A=nav-centrée | B=inline Vercel | C=identité forte + Menu
       hero:         'B',  // A=centré      | B=asymétrique   | C=full-bleed éditorial
@@ -165,6 +166,7 @@ export const siteConfig = {
           text:  'Rédaction, relecture et négociation de vos contrats commerciaux, CGV, baux professionnels.',
           link:  'En savoir plus →',
           tag:   '4–6 sem',
+          features: ['Audit de contrats', 'Rédaction CGV', 'Négociations B2B'],
         },
         {
           icon:  'building',
@@ -172,6 +174,7 @@ export const siteConfig = {
           text:  'Choix de la forme juridique, rédaction des statuts, accompagnement au lancement.',
           link:  'En savoir plus →',
           tag:   '2–3 sem',
+          features: ['Statuts sur mesure', 'Pacte d\'associés', 'Formalités greffe'],
         },
         {
           icon:  'shield',
@@ -179,6 +182,7 @@ export const siteConfig = {
           text:  'Défense de vos intérêts en cas de conflit commercial, recouvrement de créances, procédures.',
           link:  'En savoir plus →',
           tag:   'Sur devis',
+          features: ['Recouvrement', 'Défense tribunal', 'Médiation'],
         },
       ],
     },

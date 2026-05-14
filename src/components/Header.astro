@@ -44,9 +44,9 @@ const nav = [
       <div class="hdr-left-b">
         <a href="/" class="logo logo-b">
           <span class="logo-mark"></span>
-          <span class="logo-name">{business.name}</span>
+          <span class="logo-name text-mono" style="font-weight: 600;">studio</span>
         </a>
-        <span class="hdr-sep" aria-hidden="true"></span>
+        <div class="hdr-sep" aria-hidden="true"></div>
         <nav class="nav-b" aria-label="Navigation principale">
           {nav.map(l => <a href={l.href} class="nav-link">{l.label}</a>)}
         </nav>
@@ -79,15 +79,14 @@ const nav = [
         </span>
       </a>
       <div class="hdr-right-c">
-        <span class="dispo-chip">
+        <div class="dispo-chip hide-mobile">
           <span class="dispo-dot" aria-hidden="true"></span>
-          {business.availability}
-        </span>
+          <span class="text-faint">répond sous 24 h</span>
+        </div>
         <button class="btn btn-outline btn-sm menu-toggle-c" aria-label="Ouvrir le menu" aria-expanded="false">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
-            <rect x="0" y="0" width="5" height="5"/><rect x="7" y="0" width="5" height="5"/>
-            <rect x="0" y="7" width="5" height="5"/><rect x="7" y="7" width="5" height="5"/>
-          </svg>
+          <div class="menu-grid-icon" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
           Menu
         </button>
         <a href="#contact" class="btn btn-primary btn-sm">Réserver un appel</a>
@@ -221,7 +220,7 @@ if (menuToggleC && overlayC) {
 /* ─── Variante B ───────────────────────────────────────────────────────── */
 .hdr-left-b { display: flex; align-items: center; gap: 16px; }
 .hdr-sep {
-  width: 1px; height: 18px;
+  width: 1px; height: 20px;
   background: var(--line);
   flex-shrink: 0;
 }
@@ -242,6 +241,11 @@ if (menuToggleC && overlayC) {
 .logo-tagline { font-family: var(--mono); font-size: 10px; color: var(--inkFaint); }
 .hdr-right-c { display: flex; align-items: center; gap: 16px; margin-left: auto; }
 .menu-toggle-c { gap: 8px; }
+.menu-grid-icon {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+  width: 10px; height: 10px;
+}
+.menu-grid-icon span { background: currentColor; width: 4px; height: 4px; }
 
 /* Overlay menu C */
 .menu-overlay-c {
