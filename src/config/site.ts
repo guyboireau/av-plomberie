@@ -11,6 +11,14 @@
 // ═════════════════════════════════════════════════════════════════════════════
 
 export const siteConfig = {
+  // Navigation (landing 1 page)
+  nav: [
+    { label: 'Services',  href: '#services' },
+    { label: 'À propos',  href: '#apropos' },
+    { label: 'Tarifs',    href: '#tarifs' },
+    { label: 'FAQ',       href: '#faq' },
+    { label: 'Contact',   href: '#contact' },
+  ],
 
   // ── 1. INFORMATIONS BUSINESS ───────────────────────────────────────────────
   business: {
