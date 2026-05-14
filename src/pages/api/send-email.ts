@@ -1,11 +1,6 @@
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
-if (!RESEND_API_KEY) {
-    throw new Error('RESEND_API_KEY environment variable is not set');
-}
-const resend = new Resend(RESEND_API_KEY);
 
 function escapeHtml(str: string): string {
     return str
@@ -18,6 +13,13 @@ function escapeHtml(str: string): string {
 
 export const POST: APIRoute = async ({ request }) => {
     try {
+        const apiKey = process.env.RESEND_API_KEY;
+        if (!apiKey) {
+            return new Response(JSON.stringify({ error: 'RESEND_API_KEY non configurée' }), {
+                status: 503, headers: { 'Content-Type': 'application/json' },
+            });
+        }
+        const resend = new Resend(apiKey);
         const body = await request.json();
         const { name, email, message } = body;
 
