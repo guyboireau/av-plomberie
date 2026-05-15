@@ -57,7 +57,7 @@ const schema = {
   title={`${business.name} — ${business.tagline}`}
   description={seo.defaultDescription}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
 
   <Header />
   <main id="main-content">

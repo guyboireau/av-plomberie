@@ -93,6 +93,12 @@ import { contact, business } from '../config/site';
                     rows="5" required></textarea>
           <span class="cnt-error" aria-live="polite"></span>
         </div>
+
+        <!-- Honeypot : caché aux utilisateurs, visible aux bots -->
+        <div class="cnt-honeypot" aria-hidden="true">
+          <input type="text" name="website" id="cnt-website" tabindex="-1" autocomplete="off" />
+        </div>
+
         <div class="cnt-footer">
           <button type="submit" class="btn btn-primary btn-lg cnt-submit">
             Envoyer la demande
@@ -167,6 +173,17 @@ form?.addEventListener('submit', async (e) => {
 </script>
 
 <style>
+/* ─── Honeypot (caché) ──────────────────────────────────────────────── */
+.cnt-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ─── Layout ─────────────────────────────────────────────────────────── */
 .cnt-inner {
   display: grid; grid-template-columns: 1fr 2fr;
