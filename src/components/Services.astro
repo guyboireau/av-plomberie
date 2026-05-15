@@ -224,7 +224,7 @@ const icons: Record<string, string> = {
       {services.items.map((item) => (
         <div class="srv-h-card">
           <div class="srv-h-image">
-            <img src="/assets/images/hero.png" alt={item.title} />
+            <img src={item.image} alt={item.title} loading="lazy" />
           </div>
           <div class="srv-h-content">
             <div class="srv-h-icon">

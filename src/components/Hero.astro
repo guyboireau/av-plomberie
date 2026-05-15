@@ -324,6 +324,7 @@ const v = variants.hero;
 .hero-b-img {
   width: 100%;
   aspect-ratio: 4/5;
+  object-fit: cover;
   border-radius: var(--radius-lg);
 }
 .hero-b-badge {
@@ -750,7 +751,7 @@ const v = variants.hero;
   position: absolute;
   top: 0; right: 0; bottom: 0;
   width: 100%;
-  background-image: linear-gradient(to right, #0f172a 40%, transparent 100%), url('/assets/images/hero.png');
+  background-image: linear-gradient(to right, #0f172a 40%, #0f172a 100%);
   background-size: cover;
   background-position: center;
   opacity: 0.6;
@@ -823,7 +824,7 @@ const v = variants.hero;
     flex-direction: column;
   }
   .hero-h-bg {
-    background-image: linear-gradient(to bottom, #0f172a 40%, transparent 100%), url('/assets/images/hero.png');
+    background-image: linear-gradient(to right, #0f172a 40%, #0f172a 100%);
   }
 }
 @media (max-width: 600px) {
