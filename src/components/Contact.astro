@@ -226,6 +226,36 @@ form?.addEventListener('submit', async (e) => {
   color: #1e6a3c; font-size: 14px; font-weight: 500;
 }
 
+/* ─── Overrides par direction ────────────────────────────────────────── */
+
+/* D : Forge Industrial */
+body.v-d .cnt-h2 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; letter-spacing: -0.02em; color: #1c2d45; }
+body.v-d .cnt-form-wrap { background: #dce3ea; border: 1.5px solid #1c2d45; border-radius: 0; }
+body.v-d .cnt-input { background: #e8ecf0; border-color: #4a6888; border-radius: 0; }
+body.v-d .cnt-input:focus { border-color: #1c2d45; box-shadow: 0 0 0 3px rgba(28,45,69,.1); }
+body.v-d .cnt-label { font-family: 'Manrope', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #6a8099; }
+body.v-d .cnt-detail-icon { border-radius: 0; background: #1c2d45; color: #e8ecf0; }
+
+/* E : Le Salon Naval */
+body.v-e .cnt-h2 { font-family: 'Newsreader', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(28px, 3.5vw, 44px); color: #1c3458; }
+body.v-e .cnt-form-wrap { background: #f8fafc; border-color: #b8ccdd; }
+body.v-e .cnt-input { background: #f0f4f8; border-color: #b8ccdd; }
+body.v-e .cnt-input:focus { border-color: #1c3458; box-shadow: 0 0 0 3px rgba(28,52,88,.08); }
+body.v-e .cnt-detail-icon { background: #dbeafe; color: #1c3458; border-radius: 4px; }
+
+/* G : Vague Aqua */
+body.v-g .cnt-form-wrap { background: #f0f8fb; border-color: #7ab8d0; border-radius: 28px; padding: clamp(28px, 4vw, 48px); }
+body.v-g .cnt-input { background: #e8f4f8; border-color: #7ab8d0; border-radius: 14px; }
+body.v-g .cnt-input:focus { border-color: #0e92b8; box-shadow: 0 0 0 3px rgba(14,146,184,.12); }
+body.v-g .cnt-detail-icon { background: #b8dce8; color: #1c3d5a; border-radius: 50%; }
+body.v-g .cnt-h2 { color: #1c3d5a; }
+
+/* H : ABPM Blue */
+body.v-h .cnt-form-wrap { border-color: #dbeafe; box-shadow: 0 2px 20px rgba(29,98,200,.07); }
+body.v-h .cnt-input:focus { border-color: #1d62c8; box-shadow: 0 0 0 3px rgba(29,98,200,.1); }
+body.v-h .cnt-detail-icon { background: #dbeafe; color: #1d62c8; }
+body.v-h .cnt-h2 { color: #0f172a; }
+
 /* ─── Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .cnt-inner { grid-template-columns: 1fr; }

@@ -75,13 +75,13 @@ export const siteConfig = {
 
   // ── 2. BRANDING ────────────────────────────────────────────────────────────
   branding: {
-    primaryColor:    '#3b82f6',   // Bleu standard
-    primaryDark:     '#2563eb',
-    primarySoft:     '#eff6ff',
-    secondaryColor:  '#1a1916',
-    accentColor:     '#f59e0b',
-    fontHeading:     'Geist',
-    fontBody:        'Geist',
+    primaryColor:    '#1d62c8',   // Bleu plombier professionnel
+    primaryDark:     '#1550a8',
+    primarySoft:     '#dbeafe',
+    secondaryColor:  '#0f172a',
+    accentColor:     '#f08c00',   // Orange urgence
+    fontHeading:     'Outfit',
+    fontBody:        'Outfit',
     fontMono:        'Geist Mono',
     logoPath:        '/assets/logo.svg',
     faviconPath:     '/favicon.svg',
@@ -386,7 +386,7 @@ export const siteConfig = {
 } as const;
 
 // ─── Re-exports nommés (compat avec les composants existants) ──────────────
-export type Variant = 'A' | 'B' | 'C';
+export type Variant = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H';
 
 export const { business, branding, seo, design, features, pages, nav, content } = siteConfig;
 export const variants      = siteConfig.design.variants;
@@ -403,6 +403,7 @@ export const portfolio     = siteConfig.content.portfolio;
 export const certifications = siteConfig.content.certifications;
 
 // ─── Palettes de départ (copier-coller les valeurs dans branding) ──────────
+// Plombier  → primary #1d62c8  primaryDark #1550a8  primarySoft #dbeafe  accent #f08c00
 // Artisan   → primary #b8763d  primaryDark #9a6128  primarySoft #f6e7d4
 // BtoB      → primary #1e3a5f  primaryDark #152b47  primarySoft #dbeafe
 // Restaurant→ primary #c1440e  primaryDark #a03809  primarySoft #fde8de
