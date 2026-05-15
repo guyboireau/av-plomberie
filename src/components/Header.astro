@@ -382,9 +382,9 @@ if (menuTrigger && overlayNav) {
 /* ─── Variante E : Le Salon ───────────────────────────────────────────── */
 .hdr-e {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(244,237,224,.92);
+  background: rgba(240,244,248,.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #2c2520;
+  border-bottom: 1px solid #b8ccdd;
 }
 .hdr-e-inner {
   display: flex; align-items: center; gap: 40px;
@@ -392,27 +392,27 @@ if (menuTrigger && overlayNav) {
 }
 .hdr-e-logo {
   font-family: 'Newsreader', Georgia, serif;
-  font-size: 20px; font-style: italic; color: #1a1612;
+  font-size: 20px; font-style: italic; color: #1c3458;
   text-decoration: none; flex-shrink: 0;
 }
 .hdr-e-nav { display: flex; gap: 36px; }
 .hdr-e-link {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px; color: #5a504a; transition: color 0.15s;
+  font-size: 14px; color: #3d5880; transition: color 0.15s;
 }
-.hdr-e-link:hover { color: #1a1612; }
+.hdr-e-link:hover { color: #1c3458; }
 .hdr-e-actions { display: flex; align-items: center; gap: 18px; margin-left: auto; }
 .hdr-e-lang {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; color: #8a8074; letter-spacing: 0.1em;
+  font-size: 11px; color: #6e88a8; letter-spacing: 0.1em;
 }
 .hdr-e-btn {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13px; padding: 10px 18px;
-  border: 1px solid #2c2520; color: #2c2520; background: transparent;
+  border: 1px solid #1c3458; color: #1c3458; background: transparent;
   border-radius: 0; text-decoration: none; transition: background 0.15s, color 0.15s;
 }
-.hdr-e-btn:hover { background: #2c2520; color: #fbf6ec; }
+.hdr-e-btn:hover { background: #1c3458; color: #f0f4f8; }
 
 /* ─── Variante F : Stade ──────────────────────────────────────────────── */
 .hdr-f {
@@ -459,40 +459,40 @@ if (menuTrigger && overlayNav) {
 }
 .hdr-f-btn:hover { background: #3a63ff; border-color: #3a63ff; }
 
-/* ─── Variante G : Verveine ───────────────────────────────────────────── */
+/* ─── Variante G : Vague Aqua ─────────────────────────────────────────── */
 .hdr-g {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 16px 48px;
 }
 .hdr-g-pill {
   display: flex; align-items: center; gap: 24px;
-  background: #fbf8f0;
+  background: #f0f8fb;
   border-radius: 9999px;
   padding: 10px 14px 10px 22px;
-  box-shadow: 0 2px 12px rgba(62,74,58,.07);
+  box-shadow: 0 2px 12px rgba(28,61,90,.1);
 }
 .hdr-g-logo {
   display: flex; align-items: center; gap: 10px;
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 18px; font-weight: 600; color: #3e4a3a;
+  font-size: 18px; font-weight: 600; color: #1c3d5a;
   letter-spacing: -0.01em; text-decoration: none; flex-shrink: 0;
 }
-.hdr-g-dot { width: 22px; height: 22px; border-radius: 50%; background: #3e4a3a; }
+.hdr-g-dot { width: 22px; height: 22px; border-radius: 50%; background: #0e92b8; }
 .hdr-g-nav { display: flex; gap: 28px; }
 .hdr-g-link {
   font-family: 'DM Sans', sans-serif;
-  font-size: 14px; color: #5a5f50; transition: color 0.15s;
+  font-size: 14px; color: #2d5a7a; transition: color 0.15s;
 }
-.hdr-g-link:hover { color: #3e4a3a; }
+.hdr-g-link:hover { color: #1c3d5a; }
 .hdr-g-btn {
   font-family: 'DM Sans', sans-serif; font-weight: 500;
   font-size: 14px; padding: 10px 20px;
-  background: #3e4a3a; color: #fbf8f0;
-  border: 1.5px solid #3e4a3a; border-radius: 9999px;
+  background: #1c3d5a; color: #f0f8fb;
+  border: 1.5px solid #1c3d5a; border-radius: 9999px;
   text-decoration: none; margin-left: auto; flex-shrink: 0;
   transition: background 0.15s;
 }
-.hdr-g-btn:hover { background: #2a3427; }
+.hdr-g-btn:hover { background: #0e2a40; }
 @media (max-width: 900px) {
   .hdr-e-nav, .hdr-e-lang, .hdr-e-actions { display: none; }
   .hdr-e-inner { padding: 0 24px; justify-content: space-between; }
@@ -502,11 +502,11 @@ if (menuTrigger && overlayNav) {
   .hdr-g-pill { border-radius: 16px; justify-content: space-between; }
 }
 
-/* ─── Variante D : Forge ───────────────────────────────────────────────── */
+/* ─── Variante D : Forge Industrial ───────────────────────────────────── */
 .hdr-d {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: #ecdcbe;
-  border-bottom: 3px solid #241c12;
+  background: #dce3ea;
+  border-bottom: 3px solid #1c2d45;
 }
 .hdr-d-inner {
   display: flex; align-items: center; gap: 24px;
@@ -515,39 +515,39 @@ if (menuTrigger && overlayNav) {
 .hdr-d-brand { display: flex; align-items: baseline; gap: 10px; flex-shrink: 0; }
 .hdr-d-name {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 20px; letter-spacing: -0.01em; color: #241c12;
+  font-size: 20px; letter-spacing: -0.01em; color: #1c2d45;
 }
 .hdr-d-est {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; color: #7a6a4e; letter-spacing: 0.15em;
+  font-size: 10px; color: #6a8099; letter-spacing: 0.15em;
 }
 .hdr-d-nav {
   display: flex; gap: 24px; margin-left: 28px;
 }
 .hdr-d-link {
   font-family: 'Manrope', sans-serif;
-  font-size: 12px; font-weight: 700; color: #241c12;
+  font-size: 12px; font-weight: 700; color: #1c2d45;
   letter-spacing: 0.05em; text-transform: uppercase;
   transition: color 0.15s;
 }
-.hdr-d-link:hover { color: #c08c3c; }
+.hdr-d-link:hover { color: #e67e22; }
 .hdr-d-actions {
   display: flex; align-items: center; gap: 16px; margin-left: auto;
 }
 .hdr-d-open {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; color: #4a3d2a; letter-spacing: 0.1em;
+  font-size: 10px; color: #4a6888; letter-spacing: 0.1em;
 }
 .hdr-d-btn {
   font-family: 'Manrope', sans-serif; font-weight: 700;
   font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;
   padding: 10px 18px;
-  background: #241c12; color: #ecdcbe;
-  border: 2px solid #241c12; border-radius: 0;
+  background: #e67e22; color: #fff;
+  border: 2px solid #e67e22; border-radius: 0;
   cursor: pointer; text-decoration: none; display: inline-block;
   transition: background 0.15s, color 0.15s;
 }
-.hdr-d-btn:hover { background: #c08c3c; border-color: #241c12; color: #241c12; }
+.hdr-d-btn:hover { background: #1c2d45; border-color: #1c2d45; color: #e8ecf0; }
 @media (max-width: 900px) {
   .hdr-d-nav, .hdr-d-open, .hdr-d-btn { display: none; }
   .hdr-d-inner { padding: 0 24px; justify-content: space-between; }
