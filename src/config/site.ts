@@ -75,9 +75,9 @@ export const siteConfig = {
 
   // ── 2. BRANDING ────────────────────────────────────────────────────────────
   branding: {
-    primaryColor:    '#1d62c8',   // Bleu plombier professionnel
-    primaryDark:     '#1550a8',
-    primarySoft:     '#dbeafe',
+    primaryColor:    '#0266FF',   // Bleu AL Plomberie
+    primaryDark:     '#0047BB',
+    primarySoft:     '#f8fafc',
     secondaryColor:  '#0f172a',
     accentColor:     '#f08c00',   // Orange urgence
     fontHeading:     'Outfit',

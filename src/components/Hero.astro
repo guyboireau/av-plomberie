@@ -241,7 +241,13 @@ const v = variants.hero;
 .hero-eyebrow { margin-bottom: 20px; }
 
 /* ─── Variante A ─────────────────────────────────────────────────────────── */
-.hero-a { padding-top: calc(68px + clamp(64px, 10vw, 120px)); }
+.hero-a {
+  padding-top: calc(68px + clamp(80px, 12vw, 160px));
+  padding-bottom: clamp(60px, 10vw, 120px);
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  color: #fff;
+  text-align: center;
+}
 .hero-a-inner {
   display: flex; flex-direction: column; align-items: center;
   text-align: center;
@@ -252,34 +258,55 @@ const v = variants.hero;
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.05;
-  color: var(--ink);
+  color: #fff;
   margin-bottom: 24px;
 }
 .hero-a-sub {
   font-size: clamp(16px, 2vw, 19px);
-  color: var(--inkSoft);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   max-width: 56ch;
   margin-bottom: 40px;
 }
 .hero-a-actions {
-  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
-  margin-bottom: 56px;
+  display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  margin-bottom: 72px;
+}
+.hero-a-actions .btn-primary {
+  background: #fff;
+  color: #0266FF;
+  border-radius: 12px;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero-a-actions .btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+.hero-a-actions .btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem 2.5rem;
+  backdrop-filter: blur(4px);
 }
 .trust-strip {
   width: 100%;
-  border-top: 1px solid var(--lineSoft);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 32px;
   display: flex; flex-direction: column; align-items: center; gap: 16px;
 }
-.trust-label { margin: 0; }
+.trust-label { margin: 0; color: rgba(255, 255, 255, 0.7); }
 .trust-items {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px;
 }
 .trust-item {
-  font-size: 13px; color: var(--inkSoft); font-family: var(--fontMono);
+  font-size: 13px; color: rgba(255, 255, 255, 0.6); font-family: var(--fontMono);
 }
-.trust-item::before { content: '✓  '; color: var(--primary); }
+.trust-item::before { content: '✓  '; color: #fff; }
 
 /* Hero A — image optionnelle sous le trust strip */
 .hero-a-img-wrap {

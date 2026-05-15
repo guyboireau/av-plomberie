@@ -84,30 +84,33 @@ const v = variants.cta;
 <style>
 /* ─── A ───────────────────────────────────────────────────────────────── */
 .cta-a {
-  background: var(--ink);
+  background: var(--primaryColor);
+  background: linear-gradient(135deg, #0266FF 0%, #0047BB 100%);
   padding: clamp(64px, 10vw, 120px) 0;
 }
 .cta-a-inner {
   display: flex; flex-direction: column; align-items: center;
   text-align: center; gap: 36px;
 }
-.cta-a-eyebrow { color: rgba(255,255,255,.45); }
+.cta-a-eyebrow { color: rgba(255,255,255,.8); }
 .cta-a-h2 {
-  font-size: clamp(28px, 4vw, 52px); font-weight: 600;
+  font-size: clamp(28px, 4vw, 52px); font-weight: 700;
   letter-spacing: -0.03em; line-height: 1.1; color: #fff; margin: 0;
 }
-.cta-a-sub { font-size: 17px; color: rgba(255,255,255,.65); line-height: 1.6; max-width: 48ch; margin: 0; }
-.cta-a-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.cta-a-sub { font-size: 18px; color: rgba(255,255,255,.9); line-height: 1.6; max-width: 52ch; margin: 0; }
+.cta-a-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
 /* Boutons sur fond sombre */
 .cta-btn-primary {
-  background: #fff; color: var(--ink); border-color: #fff;
+  background: #fff; color: var(--primaryColor); border-color: #fff;
+  border-radius: 12px; font-weight: 700;
 }
-.cta-btn-primary:hover { background: rgba(255,255,255,.88); }
+.cta-btn-primary:hover { background: rgba(255,255,255,.9); transform: translateY(-2px); }
 .cta-btn-ghost {
-  background: transparent; color: rgba(255,255,255,.75); border-color: rgba(255,255,255,.25);
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4);
+  border-radius: 12px;
 }
-.cta-btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,.6); }
+.cta-btn-ghost:hover { background: rgba(255,255,255,.1); }
 
 /* ─── B ───────────────────────────────────────────────────────────────── */
 .cta-b-inner {

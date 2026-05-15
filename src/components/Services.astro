@@ -250,20 +250,40 @@ const icons: Record<string, string> = {
 .srv-sub { font-size: 16px; color: var(--inkSoft); line-height: 1.6; max-width: 56ch; }
 
 /* ─── A ───────────────────────────────────────────────────────────────── */
-.srv-a-head { margin-bottom: 48px; }
-.srv-a-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.srv-a-card { padding: 32px 28px; display: flex; flex-direction: column; }
+.section.v-only-a { background: #f8fafc; }
+.srv-a-head { margin-bottom: 64px; text-align: center; }
+.srv-a-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.srv-a-card {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.srv-a-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: var(--primaryColor);
+}
 .srv-a-icon-wrap {
-  width: 44px; height: 44px; background: var(--lineSoft); border-radius: var(--radius-md);
-  display: flex; align-items: center; justify-content: center; color: var(--ink); margin-bottom: 24px;
+  width: 56px; height: 56px;
+  background: #eff6ff;
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primaryColor);
+  margin-bottom: 28px;
 }
-.srv-a-title { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
-.srv-a-text { font-size: 14.5px; color: var(--inkSoft); line-height: 1.65; flex: 1; margin-bottom: 20px; }
+.srv-a-title { font-size: 20px; font-weight: 700; color: var(--secondaryColor); margin-bottom: 16px; }
+.srv-a-text { font-size: 15.5px; color: #475569; line-height: 1.6; flex: 1; margin-bottom: 24px; }
 .srv-a-link {
-  font-size: 13.5px; font-weight: 500; color: var(--ink);
-  display: inline-flex; align-items: center; gap: 4px; transition: gap 0.15s;
+  font-size: 14px; font-weight: 600; color: var(--primaryColor);
+  display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s;
+  text-decoration: none;
 }
-.srv-a-link:hover { gap: 8px; }
+.srv-a-link:hover { gap: 10px; }
 
 /* ─── B ───────────────────────────────────────────────────────────────── */
 .srv-b-head { margin-bottom: 48px; }
