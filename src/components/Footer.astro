@@ -70,7 +70,7 @@ const year = new Date().getFullYear();
 
   <div class="container ftr-bottom">
     <p class="eyebrow">© {year} {business.name} · SIRET {business.siret}</p>
-    <p class="eyebrow">{footer.madeBy}</p>
+    <p class="eyebrow" set:html={footer.madeBy} />
   </div>
 </footer>
 
@@ -116,7 +116,7 @@ const year = new Date().getFullYear();
       {footer.legal.map(l => <a href={l.href} class="ftr-link ftr-link-faint">{l.label}</a>)}
     </div>
     <p class="eyebrow ftr-c-copy">
-      © {year} {business.name} · {footer.madeBy}
+      © {year} {business.name} · <span set:html={footer.madeBy} />
     </p>
   </div>
 </footer>
@@ -240,7 +240,7 @@ const year = new Date().getFullYear();
     </div>
     <div class="ftr-h-bottom">
       <p>© {year} {business.name}. Tous droits réservés.</p>
-      <p>{footer.madeBy}</p>
+      <p set:html={footer.madeBy} />
     </div>
   </div>
 </footer>

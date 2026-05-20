@@ -53,19 +53,21 @@ import { testimonials } from '../config/site';
       <p class="tst-rating eyebrow" style="margin-top: 8px;">{testimonials.ratingStr}</p>
     </div>
     <div class="tst-b-right">
-      <div class="tst-b-featured">
-        <div class="stars" aria-label="5 étoiles" style="margin-bottom: 20px;">
-          {'★★★★★'.split('').map(s => <span class="star">{s}</span>)}
-        </div>
-        <blockquote class="tst-b-quote">"{testimonials.items[0].quote}"</blockquote>
-        <div class="tst-b-author">
-          <span class="tst-avatar tst-avatar-lg" aria-hidden="true">{testimonials.items[0].initial}</span>
-          <div>
-            <p class="tst-name">{testimonials.items[0].name}</p>
-            <p class="tst-role eyebrow">{testimonials.items[0].role}</p>
+      {testimonials.items.length > 0 && (
+        <div class="tst-b-featured">
+          <div class="stars" aria-label="5 étoiles" style="margin-bottom: 20px;">
+            {'★★★★★'.split('').map(s => <span class="star">{s}</span>)}
+          </div>
+          <blockquote class="tst-b-quote">"{testimonials.items[0].quote}"</blockquote>
+          <div class="tst-b-author">
+            <span class="tst-avatar tst-avatar-lg" aria-hidden="true">{testimonials.items[0].initial}</span>
+            <div>
+              <p class="tst-name">{testimonials.items[0].name}</p>
+              <p class="tst-role eyebrow">{testimonials.items[0].role}</p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <div class="tst-b-mini-list">
         {testimonials.items.slice(1).map((t) => (
           <article class="tst-b-mini">

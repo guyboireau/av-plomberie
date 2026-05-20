@@ -1,13 +1,5 @@
 // ═════════════════════════════════════════════════════════════════════════════
 //  SITE CONFIG — fichier unique à modifier par client
-//  Structure :
-//    siteConfig.business  → infos de l'entreprise
-//    siteConfig.branding  → couleurs, polices, logo
-//    siteConfig.seo       → titre, description, mots-clés
-//    siteConfig.design    → variantes de mise en page A/B/C par section
-//    siteConfig.pages     → titres/descriptions des pages (multipage)
-//    siteConfig.features  → activer/désactiver des modules
-//    siteConfig.content   → contenus sections (hero, services, etc.)
 // ═════════════════════════════════════════════════════════════════════════════
 
 export const siteConfig = {
@@ -15,31 +7,30 @@ export const siteConfig = {
   nav: [
     { label: 'Services',  href: '#services' },
     { label: 'À propos',  href: '#apropos' },
-    { label: 'Tarifs',    href: '#tarifs' },
     { label: 'FAQ',       href: '#faq' },
     { label: 'Contact',   href: '#contact' },
   ],
 
   // ── 1. INFORMATIONS BUSINESS ───────────────────────────────────────────────
   business: {
-    name:     '[NOM DE L\'ENTREPRISE]',
-    tagline:  '[VOTRE SLOGAN ICI]',
-    industry: 'services',          // utilisé pour schema.org + choix de contenu IA
-    icon:     'wrench',            // Icône de métier (Phosphor icon name sans le préfixe ph-)
-    phone:    '+33 6 00 00 00 00',
-    email:    'contact@votre-domaine.fr',
+    name:     'AV Plomberie',
+    tagline:  'Votre expert plomberie et sanitaire de confiance',
+    industry: 'plombier',
+    icon:     'wrench',
+    phone:    '06 24 67 31 10',
+    email:    'contact@av-plomberie.fr',
     address: {
-      street:     '[RUE ET NUMÉRO]',
-      city:       '[VILLE]',
-      postalCode: '[CODE POSTAL]',
+      street:     '6 avenue Oche',
+      city:       'Monestier de Clermont',
+      postalCode: '38650',
       country:    'FR',
     },
     openingHours: {
-      monday:    '09:00-18:00',
-      tuesday:   '09:00-18:00',
-      wednesday: '09:00-18:00',
-      thursday:  '09:00-18:00',
-      friday:    '09:00-18:00',
+      monday:    '08:00-18:00',
+      tuesday:   '08:00-18:00',
+      wednesday: '08:00-18:00',
+      thursday:  '08:00-18:00',
+      friday:    '08:00-18:00',
       saturday:  null,
       sunday:    null,
     },
@@ -49,37 +40,36 @@ export const siteConfig = {
       facebook:  '',
       twitter:   '',
     },
-    siret:        '000 000 000 00000',
+    siret:        '',
     availability: 'Disponible',
     urgency: {
       active:    true,
       label:     'Urgence 24h/7j',
-      phone:     '+33 6 00 00 00 00',
+      phone:     '06 24 67 31 10',
     },
     serviceArea: [
-      '[Ville principale]',
-      '[Ville 2]',
-      '[Ville 3]',
-      '[Département XX]',
+      'Monestier de Clermont',
+      'Isère (38)',
+      'Trièves'
     ],
     certifications: [
-      { label: 'Garantie décennale', sublabel: 'Assurance RC Pro incluse',          icon: '🛡️' },
-      { label: 'RGE',                sublabel: 'Reconnu Garant de l\'Environnement', icon: '🌿' },
-      { label: 'Qualibat',           sublabel: 'Artisan certifié qualité',            icon: '✅' },
+      { label: 'Intervention Rapide', sublabel: 'Disponibilité 24h/24', icon: '⚡' },
+      { label: 'Travail Garanti', sublabel: 'Assurance professionnelle', icon: '🛡️' },
+      { label: 'Devis Gratuit', sublabel: 'Tarifs transparents', icon: '✅' },
     ],
     assurance: {
-      name:   '[Nom de l\'assureur]',
-      numero: '[N° police RC Pro]',
+      name:   '',
+      numero: '',
     },
   },
 
   // ── 2. BRANDING ────────────────────────────────────────────────────────────
   branding: {
-    primaryColor:    '#0266FF',   // Bleu AL Plomberie
+    primaryColor:    '#0266FF',
     primaryDark:     '#0047BB',
     primarySoft:     '#f8fafc',
     secondaryColor:  '#0f172a',
-    accentColor:     '#f08c00',   // Orange urgence
+    accentColor:     '#f08c00',
     fontHeading:     'Outfit',
     fontBody:        'Outfit',
     fontMono:        'Geist Mono',
@@ -89,13 +79,16 @@ export const siteConfig = {
 
   // ── 3. SEO ─────────────────────────────────────────────────────────────────
   seo: {
-    titleTemplate:      '%s | [NOM DE L\'ENTREPRISE]',
-    defaultTitle:       '[NOM DE L\'ENTREPRISE] — [ACTIVITÉ PRINCIPALE]',
-    defaultDescription: 'Description courte de vos services et de votre valeur ajoutée pour vos clients.',
+    titleTemplate:      '%s | AV Plomberie',
+    defaultTitle:       'AV Plomberie — Plombier à Monestier de Clermont',
+    defaultDescription: 'Entreprise de plomberie professionnelle à Monestier de Clermont. Dépannage urgence 24/7, fuites, sanitaire, chauffage. Devis gratuit.',
     keywords: [
-      'mot-clé 1',
-      'mot-clé 2',
-      'mot-clé 3',
+      'plombier',
+      'Monestier de Clermont',
+      'dépannage plomberie',
+      'urgence plomberie',
+      'rénovation salle de bain',
+      'fuite eau'
     ],
     googleBusinessUrl:   '',
     googleAnalyticsId:   '',
@@ -104,7 +97,7 @@ export const siteConfig = {
     plausibleDomain:     '',
     sentryDsn:           '',
     locale:              'fr_FR',
-    siteUrl:             'https://votre-site.fr',
+    siteUrl:             'https://av-plomberie.vercel.app',
     ogImage:             '/assets/og-image.jpg',
   },
 
@@ -129,32 +122,7 @@ export const siteConfig = {
     home: {
       slug:        '/',
       title:       'Accueil',
-      description: 'Bienvenue sur notre site.',
-    },
-    services: {
-      slug:        '/services',
-      title:       'Nos services',
-      description: 'Découvrez nos prestations.',
-    },
-    about: {
-      slug:        '/a-propos',
-      title:       'À propos',
-      description: 'En savoir plus sur notre entreprise.',
-    },
-    blog: {
-      slug:        '/blog',
-      title:       'Blog',
-      description: 'Actualités et conseils.',
-    },
-    realisations: {
-      slug:        '/realisations',
-      title:       'Réalisations',
-      description: 'Nos projets récents.',
-    },
-    contact: {
-      slug:        '/contact',
-      title:       'Contact',
-      description: 'Contactez-nous pour toute demande.',
+      description: 'Dépannage et installation plomberie à Monestier de Clermont.',
     },
   },
 
@@ -163,7 +131,7 @@ export const siteConfig = {
     blog:          false,
     booking:       false,
     multilingual:  false,
-    pricing:       true,
+    pricing:       false,
     testimonials:  true,
     newsletter:    false,
     cookieBanner:  true,
@@ -176,87 +144,75 @@ export const siteConfig = {
   content: {
 
     hero: {
-      eyebrow:  '[SOUSTITRE / ACTIVITÉ]',
-      h1:       '[TITRE PRINCIPAL CAPTIVANT]',
-      subtitle: '[Description détaillée de ce que vous faites et pourquoi vous êtes le meilleur choix pour vos clients.]',
+      eyebrow:  'PLOMBERIE & SANITAIRE EN ISÈRE',
+      h1:       'Votre plombier expert à Monestier de Clermont',
+      subtitle: 'Nous intervenons rapidement pour tous vos besoins en plomberie : réparation de fuites, rénovation de salle de bain et dépannage d\'urgence 24h/24 et 7j/7. Un service fiable et de qualité.',
       image:    '/assets/images/placeholder-hero.png',
-      cta1:     { label: '[BOUTON PRINCIPAL]', href: '#contact' },
-      cta2:     { label: '[BOUTON SECONDAIRE]', href: '#services' },
-      trust:    ['[Argument 1]', '[Argument 2]', '[Argument 3]'],
-      badge:    { label: '[LABEL]', value: '[VALEUR]', sub: '[DÉTAIL]' },
-      infoCard: { status: 'Disponible', hours: 'Lun–Ven · 9h–18h', location: '[VOTRE ADRESSE]' },
+      cta1:     { label: 'Demander une intervention', href: '#contact' },
+      cta2:     { label: 'Découvrir nos services', href: '#services' },
+      trust:    ['Dépannage 24/7', 'Devis gratuit', 'Intervention rapide'],
+      badge:    { label: 'Avis Client', value: '5/5', sub: 'Excellente satisfaction' },
+      infoCard: { status: 'Disponible pour les urgences', hours: '24h/24 - 7j/7', location: '6 avenue Oche, 38650 Monestier de Clermont' },
     },
 
     services: {
       eyebrow:  '— Nos prestations',
-      title:    '[TITRE DE LA SECTION SERVICES]',
-      subtitle: '[Introduction à vos services et votre savoir-faire.]',
+      title:    'Des services complets pour votre plomberie',
+      subtitle: 'De la petite réparation à la rénovation complète, nous sommes équipés pour répondre à toutes vos demandes avec professionnalisme.',
       items: [
         {
-          icon:  'star',
-          title: '[Service 1]',
-          text:  '[Description courte du service 1 expliquant les bénéfices.]',
-          link:  'En savoir plus →',
-          tag:   '[Tag/Info]',
-          features: ['[Caractéristique 1]', '[Caractéristique 2]', '[Caractéristique 3]'],
+          icon:  'drop',
+          title: 'Recherche et réparation de fuites',
+          text:  'Intervention rapide pour stopper et réparer vos fuites d\'eau avant que les dégâts ne s\'aggravent. Diagnostic précis garanti.',
+          link:  'Nous contacter →',
+          tag:   'Urgence possible',
+          features: ['Détection non destructive', 'Réparation immédiate', 'Mise en sécurité'],
         },
         {
-          icon:  'check',
-          title: '[Service 2]',
-          text:  '[Description courte du service 2 expliquant les bénéfices.]',
-          link:  'En savoir plus →',
-          tag:   '[Tag/Info]',
-          features: ['[Caractéristique 1]', '[Caractéristique 2]', '[Caractéristique 3]'],
+          icon:  'bathtub',
+          title: 'Installation et rénovation sanitaire',
+          text:  'Création ou rénovation de votre salle de bain, installation d\'équipements sanitaires, WC, douches à l\'italienne.',
+          link:  'Demander un devis →',
+          tag:   'Sur mesure',
+          features: ['Conception 3D possible', 'Choix des matériaux', 'Finitions soignées'],
         },
         {
-          icon:  'shield',
-          title: '[Service 3]',
-          text:  '[Description courte du service 3 expliquant les bénéfices.]',
+          icon:  'thermometer',
+          title: 'Chauffe-eau & Ventilation',
+          text:  'Vente, installation et entretien de vos systèmes de ventilation et de production d\'eau chaude sanitaire.',
           link:  'En savoir plus →',
-          tag:   '[Tag/Info]',
-          features: ['[Caractéristique 1]', '[Caractéristique 2]', '[Caractéristique 3]'],
+          tag:   'Confort',
+          features: ['Chauffe-eau électrique/thermo', 'VMC Simple/Double flux', 'Dépannage rapide'],
         },
       ],
     },
 
     about: {
-      eyebrow: '— À propos',
-      title:   '[QUI SOMMES-NOUS ?]',
+      eyebrow: '— À propos de nous',
+      title:   'AV Plomberie : L\'expertise locale à votre service',
       text: [
-        '[Paragraphe 1 : Présentez votre histoire et votre mission.]',
-        '[Paragraphe 2 : Expliquez votre approche et vos valeurs.]',
+        'AV Plomberie est une entreprise professionnelle offrant des services de qualité supérieure à ses clients dans la région de Monestier de Clermont et le Trièves. Nos plombiers expérimentés sont bien équipés pour répondre à tous vos besoins.',
+        'Nous sommes passionnés par notre métier et déterminés à offrir une expérience client exceptionnelle à chaque intervention. Nous avons à cœur de fournir des services fiables, rapides et abordables, avec une disponibilité 24h/24 et 7j/7 pour les urgences.'
       ],
       stats: [
-        { value: '[XX]',   label: '[Label 1]' },
-        { value: '[XX]+',  label: '[Label 2]' },
-        { value: '[X.X]',  label: '[Label 3]' },
+        { value: '24/7',   label: 'Disponibilité' },
+        { value: '100%',  label: 'Engagement Qualité' },
+        { value: '38',  label: 'Interventions en Isère' },
       ],
-      cta:    { label: '[EN SAVOIR PLUS]', href: '#contact' },
+      cta:    { label: 'Contactez-nous', href: '#contact' },
       image:  '/assets/images/placeholder-about.png',
-      author: { name: '[NOM]', role: '[RÔLE]', image: '/assets/images/placeholder-portrait.png' },
+      author: { name: 'Équipe', role: 'AV Plomberie', image: '/assets/images/placeholder-portrait.png' },
     },
 
     testimonials: {
       eyebrow:   '— Témoignages',
-      title:     '[TITRE TÉMOIGNAGES]',
-      ratingStr: '[X.X] / 5 · [XX] avis clients',
+      title:     'Ce que nos clients disent de nous',
+      ratingStr: '5 / 5 · Basé sur les avis clients',
       items: [
         {
-          quote:   '[Citation du client 1 : Expliquez comment vous avez aidé ce client.]',
-          name:    '[NOM CLIENT 1]',
-          role:    '[RÔLE / ENTREPRISE]',
-          initial: 'C',
-        },
-        {
-          quote:   '[Citation du client 2 : Expliquez comment vous avez aidé ce client.]',
-          name:    '[NOM CLIENT 2]',
-          role:    '[RÔLE / ENTREPRISE]',
-          initial: 'C',
-        },
-        {
-          quote:   '[Citation du client 3 : Expliquez comment vous avez aidé ce client.]',
-          name:    '[NOM CLIENT 3]',
-          role:    '[RÔLE / ENTREPRISE]',
+          quote:   'Intervention ultra rapide pour une fuite un dimanche soir. Le plombier a été très professionnel et les tarifs sont restés raisonnables malgré l\'urgence. Je recommande les yeux fermés !',
+          name:    'Client Local',
+          role:    'Monestier de Clermont',
           initial: 'C',
         },
       ],
@@ -264,81 +220,48 @@ export const siteConfig = {
 
     pricing: {
       eyebrow:  '— Tarifs',
-      title:    '[TITRE TARIFS]',
-      subtitle: '[Introduction à vos tarifs et vos différentes offres.]',
-      plans: [
-        {
-          name:      '[OFFRE 1]',
-          price:     '[PRIX]',
-          unit:      '/ [UNITÉ]',
-          desc:      '[Description courte de l\'offre 1.]',
-          features:   ['[Service inclus 1]', '[Service inclus 2]', '[Service inclus 3]'],
-          cta:        'Choisir',
-          highlight:  false,
-          stripeLink: '',
-        },
-        {
-          name:       '[OFFRE 2]',
-          price:      '[PRIX]',
-          unit:       '/ [UNITÉ]',
-          desc:       '[Description courte de l\'offre 2.]',
-          features:   ['[Service inclus 1]', '[Service inclus 2]', '[Service inclus 3]'],
-          cta:        'Choisir',
-          highlight:  true,
-          stripeLink: '',
-        },
-        {
-          name:       '[OFFRE 3]',
-          price:      '[PRIX]',
-          unit:       '/ [UNITÉ]',
-          desc:       '[Description courte de l\'offre 3.]',
-          features:   ['[Service inclus 1]', '[Service inclus 2]', '[Service inclus 3]'],
-          cta:        'Choisir',
-          highlight:  false,
-          stripeLink: '',
-        },
-      ],
+      title:    'Nos Tarifs',
+      subtitle: '',
+      plans: [],
     },
 
     faq: {
       eyebrow: '— Questions fréquentes',
-      title:   '[TITRE FAQ]',
+      title:   'Vos questions sur nos interventions',
       items: [
-        { q: '[Question 1 ?]', a: '[Réponse détaillée à la question 1.]' },
-        { q: '[Question 2 ?]', a: '[Réponse détaillée à la question 2.]' },
-        { q: '[Question 3 ?]', a: '[Réponse détaillée à la question 3.]' },
-        { q: '[Question 4 ?]', a: '[Réponse détaillée à la question 4.]' },
-        { q: '[Question 5 ?]', a: '[Réponse détaillée à la question 5.]' },
+        { q: 'Intervenez-vous en urgence la nuit ou le week-end ?', a: 'Oui, nous sommes à votre disposition 24h/24 et 7j/7 pour toutes vos urgences en plomberie.' },
+        { q: 'Faites-vous des devis gratuits pour la rénovation de salle de bain ?', a: 'Absolument. Nous nous déplaçons chez vous pour évaluer votre projet et vous fournir un devis détaillé gratuitement.' },
+        { q: 'Quels sont vos délais d\'intervention classiques ?', a: 'Pour les urgences (fuite importante, dégât des eaux), nous intervenons dans les plus brefs délais. Pour les installations, nous planifions ensemble la date qui vous convient.' },
       ],
     },
 
     cta: {
-      eyebrow:  '[APPEL À L\'ACTION]',
-      title:    '[PRÊT À DÉMARRER ?]',
-      subtitle: '[Dernière phrase d\'incitation pour contacter l\'entreprise.]',
-      cta1:     { label: '[CONTACT]', href: '#contact' },
-      cta2:     { label: '[DÉCOUVRIR]',  href: '#services' },
+      eyebrow:  'BESOIN D\'UN PLOMBIER ?',
+      title:    'Contactez-nous dès aujourd\'hui',
+      subtitle: 'Nous sommes prêts à intervenir pour réparer, installer ou rénover vos équipements de plomberie.',
+      cta1:     { label: 'Appeler le 06 24 67 31 10', href: 'tel:+33624673110' },
+      cta2:     { label: 'Demander un devis',  href: '#contact' },
     },
 
     contact: {
       eyebrow:        '— Contact',
-      title:          '[TITRE CONTACT]',
-      subtitle:       '[Décrivez ce que le client doit faire pour vous contacter.]',
-      successMessage: 'Message bien reçu — nous vous répondons rapidement.',
-      formTypes:      ['Demande de devis', 'Urgence', 'Question', 'Autre'],
+      title:          'Demande d\'intervention',
+      subtitle: 'Remplissez le formulaire ci-dessous ou appelez-nous directement. Pour une urgence, privilégiez toujours le téléphone.',
+      successMessage: 'Votre demande a bien été envoyée. Nous vous recontactons dans les meilleurs délais.',
+      formTypes:      ['Urgence Fuite', 'Devis Rénovation', 'Entretien Chauffe-eau', 'Autre'],
     },
+    
     certifications: {
-      eyebrow:  '— Certifications & Garanties',
-      title:    'Des travaux certifiés, une tranquillité d\'esprit',
-      subtitle: '[Présentez vos certifications et votre engagement qualité.]',
+      eyebrow:  '— Notre Engagement',
+      title:    'Un travail soigné et garanti',
+      subtitle: 'Nous mettons un point d\'honneur à respecter les normes en vigueur et à assurer la satisfaction de nos clients sur chaque chantier.',
     },
 
     footer: {
-      description: '[Description courte de l\'entreprise pour le bas de page.]',
+      description: 'AV Plomberie, votre artisan plombier de confiance à Monestier de Clermont. Interventions d\'urgence et rénovations.',
       links: [
         { label: 'Services',  href: '#services' },
         { label: 'À propos',  href: '#apropos' },
-        { label: 'Tarifs',    href: '#tarifs' },
         { label: 'FAQ',       href: '#faq' },
         { label: 'Contact',   href: '#contact' },
       ],
@@ -347,38 +270,11 @@ export const siteConfig = {
         { label: 'CGV',              href: '/cgv' },
         { label: 'RGPD',             href: '/rgpd' },
       ],
-      madeBy: 'Site réalisé avec [VOTRE NOM]',
+      madeBy: 'Site réalisé par <a href="https://guyboireau.com" rel="noopener" target="_blank">guyboireau.com</a>',
     },
+    
     portfolio: {
-      items: [
-        {
-          title:       '[PROJET 1]',
-          category:    '[CATÉGORIE]',
-          location:    '[Ville]',
-          year:        '2024',
-          description: '[Description courte du chantier et des travaux réalisés.]',
-          before:      '/assets/images/placeholder-before.png',
-          after:       '/assets/images/placeholder-after.png',
-        },
-        {
-          title:       '[PROJET 2]',
-          category:    '[CATÉGORIE]',
-          location:    '[Ville]',
-          year:        '2024',
-          description: '[Description courte du chantier et des travaux réalisés.]',
-          before:      '/assets/images/placeholder-before.png',
-          after:       '/assets/images/placeholder-after.png',
-        },
-        {
-          title:       '[PROJET 3]',
-          category:    '[CATÉGORIE]',
-          location:    '[Ville]',
-          year:        '2023',
-          description: '[Description courte du chantier et des travaux réalisés.]',
-          before:      '/assets/images/placeholder-before.png',
-          after:       '/assets/images/placeholder-after.png',
-        },
-      ]
+      items: []
     },
 
   }, // fin content
@@ -401,11 +297,3 @@ export const contact       = siteConfig.content.contact;
 export const footer        = siteConfig.content.footer;
 export const portfolio     = siteConfig.content.portfolio;
 export const certifications = siteConfig.content.certifications;
-
-// ─── Palettes de départ (copier-coller les valeurs dans branding) ──────────
-// Plombier  → primary #1d62c8  primaryDark #1550a8  primarySoft #dbeafe  accent #f08c00
-// Artisan   → primary #b8763d  primaryDark #9a6128  primarySoft #f6e7d4
-// BtoB      → primary #1e3a5f  primaryDark #152b47  primarySoft #dbeafe
-// Restaurant→ primary #c1440e  primaryDark #a03809  primarySoft #fde8de
-// Santé     → primary #4a7c59  primaryDark #3a6347  primarySoft #dcf0e4
-// ABPM      → primary #0ea5e9  primaryDark #0284c7  primarySoft #e0f2fe (Outfit)

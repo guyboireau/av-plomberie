@@ -33,9 +33,9 @@ const v = variants.about;
         </a>
       </div>
       <div class="abt-a-visual">
-        <img src={about.image} class="abt-a-img" alt={about.title} />
+        {about.image && <img src={about.image} class="abt-a-img" alt={about.title} />}
         <div class="abt-a-author-card">
-          <img src={about.author.image} class="abt-a-avatar" alt={about.author.name} />
+          {about.author.image && <img src={about.author.image} class="abt-a-avatar" alt={about.author.name} />}
           <div>
             <p class="abt-author-name">{about.author.name}</p>
             <p class="abt-author-role eyebrow">{about.author.role}</p>
