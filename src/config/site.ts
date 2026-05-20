@@ -147,7 +147,7 @@ export const siteConfig = {
       eyebrow:  'PLOMBERIE & SANITAIRE EN ISÈRE',
       h1:       'Votre plombier expert à Monestier de Clermont',
       subtitle: 'Nous intervenons rapidement pour tous vos besoins en plomberie : réparation de fuites, rénovation de salle de bain et dépannage d\'urgence 24h/24 et 7j/7. Un service fiable et de qualité.',
-      image:    '/assets/images/placeholder-hero.png',
+      image:    '/assets/images/hero.png',
       cta1:     { label: 'Demander une intervention', href: '#contact' },
       cta2:     { label: 'Découvrir nos services', href: '#services' },
       trust:    ['Dépannage 24/7', 'Devis gratuit', 'Intervention rapide'],
@@ -200,8 +200,8 @@ export const siteConfig = {
         { value: '38',  label: 'Interventions en Isère' },
       ],
       cta:    { label: 'Contactez-nous', href: '#contact' },
-      image:  '/assets/images/placeholder-about.png',
-      author: { name: 'Équipe', role: 'AV Plomberie', image: '/assets/images/placeholder-portrait.png' },
+      image:  '/assets/images/team.png',
+      author: { name: 'Équipe', role: 'AV Plomberie', image: '/assets/images/portrait.png' },
     },
 
     testimonials: {
